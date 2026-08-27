@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KEN COFFEE — Coffee & Vibes</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #0b0b0b;
+            color: #fff;
+            line-height: 1.6;
+        }
+
+        /* NAVBAR */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 8%;
+            background: rgba(0, 0, 0, 0.85);
+            border-bottom: 1px solid #333;
+            backdrop-filter: blur(10px);
+        }
+
+        .logo {
+            font-size: 25px;
+            font-weight: bold;
+            letter-spacing: 3px;
+            color: #e63939;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 15px;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #e63939;
+        }
+
+        /* HERO */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 120px 8% 70px;
+            position: relative;
+            overflow: hidden;
+            background:
+                linear-gradient(rgba(0,0,0,.7), rgba(0,0,0,.9)),
+                radial-gradient(circle at 80% 30%, #5c1010, transparent 35%),
+                #0b0b0b;
+        }
+
+        .hero::before {
+            content: "KEN";
+            position: absolute;
+            right: -50px;
+            bottom: -80px;
+            font-size: 250px;
+            font-weight: bold;
+            color: rgba(255,255,255,0.025);
+            transform: rotate(-10deg);
+        }
+
+        .hero-content {
+            max-width: 700px;
+            z-index: 2;
+        }
+
+        .tagline {
+            color: #e63939;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+
+        .hero h1 {
+            font-size: clamp(55px, 10vw, 110px);
+            line-height: .9;
+            text-transform: uppercase;
+            letter-spacing: -5px;
+            margin-bottom: 25px;
+        }
+
+        .hero h1 span {
+            color: #e63939;
+        }
+
+        .hero p {
+            max-width: 550px;
+            color: #bbb;
+            font-size: 17px;
+            margin-bottom: 35px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 28px;
+            background: #b51e1e;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            border: 1px solid #e63939;
+            transition: .3s;
+        }
+
+        .btn:hover {
+            background: transparent;
+            color: #e63939;
+            transform: translateY(-3px);
+        }
+
+        /* SECTION */
+        section {
+            padding: 90px 8%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title small {
+            color: #e63939;
+            letter-spacing: 4px;
+        }
+
+        .section-title h2 {
+            font-size: 42px;
+            margin-top: 8px;
+            text-transform: uppercase;
+        }
+
+        /* ABOUT */
+        .about {
+            background: #111;
+        }
+
+        .about-content {
+            max-width: 900px;
+            margin: auto;
+            text-align: center;
+        }
+
+        .about-content p {
+            color: #bbb;
+            font-size: 17px;
+        }
+
+        /* MENU */
+        .menu {
+            background: #0b0b0b;
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        .card {
+            background: #151515;
+            border: 1px solid #292929;
+            padding: 30px;
+            transition: .3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 4px;
+            height: 100%;
+            background: #e63939;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            border-color: #e63939;
+        }
+
+        .card h3 {
+            font-size: 23px;
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            color: #999;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+
+        .price {
+            color: #e63939;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        /* SPECIAL */
+        .special {
+            background:
+                linear-gradient(90deg, rgba(0,0,0,.9), rgba(60,0,0,.6)),
+                #1a1a1a;
+            text-align: center;
+        }
+
+        .special h2 {
+            font-size: 45px;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+        }
+
+        .special p {
+            color: #ccc;
+            max-width: 650px;
+            margin: auto auto 30px;
+        }
+
+        /* CONTACT */
+        .contact {
+            background: #111;
+            text-align: center;
+        }
+
+        .contact p {
+            color: #aaa;
+            margin-bottom: 25px;
+        }
+
+        /* FOOTER */
+        footer {
+            text-align: center;
+            padding: 30px;
+            background: #050505;
+            color: #777;
+            font-size: 14px;
+            border-top: 1px solid #222;
+        }
+
+        footer span {
+            color: #e63939;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 800px) {
+
+            nav {
+                padding: 15px 5%;
+            }
+
+            nav ul {
+                gap: 15px;
+            }
+
+            nav ul li a {
+                font-size: 12px;
+            }
+
+            .hero {
+                padding: 120px 7% 70px;
+            }
+
+            .hero h1 {
+                letter-spacing: -3px;
+            }
+
+            .menu-grid {
+                grid-template-columns: 1fr;
+                max-width: 500px;
+            }
+
+            section {
+                padding: 70px 7%;
+            }
+
+            .section-title h2 {
+                font-size: 34px;
+            }
+
+            .special h2 {
+                font-size: 34px;
+            }
+        }
+
+        @media (max-width: 500px) {
+
+            nav {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            nav ul {
+                gap: 12px;
+            }
+
+            .hero h1 {
+                font-size: 60px;
+            }
+
+            .hero p {
+                font-size: 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav>
+        <div class="logo">KEN COFFEE</div>
+
+        <ul>
+            <li><a href="#home">HOME</a></li>
+            <li><a href="#about">ABOUT</a></li>
+            <li><a href="#menu">MENU</a></li>
+            <li><a href="#contact">CONTACT</a></li>
+        </ul>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero" id="home">
+
+        <div class="hero-content">
+
+            <div class="tagline">
+                Coffee • Music • Stories
+            </div>
+
+            <h1>
+                KEN<br>
+                <span>COFFEE</span>
+            </h1>
+
+            <p>
+                Kopi kekinian dengan rasa berani dan suasana
+                yang berbeda. Nikmati setiap tegukan dengan
+                vibes gelap, elegan, dan penuh karakter.
+            </p>
+
+            <a href="#menu" class="btn">
+                EXPLORE MENU
+            </a>
+
+        </div>
+
+    </section>
+
+    <!-- ABOUT -->
+    <section class="about" id="about">
+
+        <div class="section-title">
+            <small>OUR STORY</small>
+            <h2>Tentang Ken Coffee</h2>
+        </div>
+
+        <div class="about-content">
+
+            <p>
+                KEN COFFEE hadir untuk kamu yang ingin menikmati
+                kopi dengan cara yang berbeda. Kami memadukan
+                kopi kekinian, desain modern, dan atmosfer
+                rock yang berkarakter menjadi satu pengalaman.
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- MENU -->
+    <section class="menu" id="menu">
+
+        <div class="section-title">
+            <small>OUR FAVORITES</small>
+            <h2>Menu Kopi</h2>
+        </div>
+
+        <div class="menu-grid">
+
+            <div class="card">
+                <h3>Ken Coffee Latte</h3>
+                <p>
+                    Espresso creamy dengan susu lembut
+                    dan rasa kopi yang seimbang.
+                </p>
+                <div class="price">Rp18.000</div>
+            </div>
+
+            <div class="card">
+                <h3>Red Velvet Coffee</h3>
+                <p>
+                    Perpaduan kopi dan red velvet dengan
+                    rasa manis yang unik.
+                </p>
+                <div class="price">Rp22.000</div>
+            </div>
+
+            <div class="card">
+                <h3>Black Cold Brew</h3>
+                <p>
+                    Cold brew dengan rasa kuat, smooth,
+                    dan menyegarkan.
+                </p>
+                <div class="price">Rp20.000</div>
+            </div>
+
+            <div class="card">
+                <h3>Caramel Macchiato</h3>
+                <p>
+                    Kopi creamy dengan sentuhan caramel
+                    yang manis dan harum.
+                </p>
+                <div class="price">Rp23.000</div>
+            </div>
+
+            <div class="card">
+                <h3>Americano</h3>
+                <p>
+                    Espresso dengan air untuk rasa kopi
+                    yang sederhana dan kuat.
+                </p>
+                <div class="price">Rp15.000</div>
+            </div>
+
+            <div class="card">
+                <h3>Mocha Dark</h3>
+                <p>
+                    Kopi dan cokelat dengan karakter
+                    rasa yang bold.
+                </p>
+                <div class="price">Rp21.000</div>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- SPECIAL -->
+    <section class="special">
+
+        <h2>MAKE IT DARK.<br>MAKE IT COFFEE.</h2>
+
+        <p>
+            Bukan sekadar kopi. Ini adalah tempat untuk
+            menikmati rasa, musik, dan cerita.
+        </p>
+
+        <a href="#contact" class="btn">
+            VISIT US
+        </a>
+
+    </section>
+
+    <!-- CONTACT -->
+    <section class="contact" id="contact">
+
+        <div class="section-title">
+            <small>COME & HANGOUT</small>
+            <h2>Ken Coffee</h2>
+        </div>
+
+        <p>
+            📍 Sidoarjo, Jawa Timur<br>
+            ☕ Open Every Day<br>
+            📱 08XX-XXXX-XXXX
+        </p>
+
+        <a href="#" class="btn">
+            ORDER NOW
+        </a>
+
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        © 2026 <span>KEN COFFEE</span> — Coffee with Character.
+    </footer>
+
+</body>
+  </html>
