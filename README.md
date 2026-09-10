@@ -1,234 +1,572 @@
-<!DOCTYPE html>
+                 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Toko Vintage Ken</title>
+  <title>Ken-Coffe | Toko Vintage</title>
 
-    <style>
-        * {
-            box-sizing: border-box;
-        }
+  <meta name="description"
+        content="Ken-Coffe - Kopi Robusta, Kelomang, dan Boti dengan nuansa vintage.">
 
-        body {
-            margin: 0;
-            font-family: Georgia, serif;
-            background-color: #e8d5b5;
-            color: #3e2723;
-        }
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-        /* HEADER */
-        header {
-            background-color: #4e342e;
-            color: #f5e6c8;
-            text-align: center;
-            padding: 40px 20px;
-            border-bottom: 6px solid #b08968;
-        }
+    html {
+      scroll-behavior: smooth;
+    }
 
-        header h1 {
-            font-size: 42px;
-            margin: 0;
-            letter-spacing: 3px;
-        }
+    body {
+      font-family: Georgia, "Times New Roman", serif;
+      background: #ead8b8;
+      color: #3b2719;
+      line-height: 1.6;
+    }
 
-        header p {
-            font-size: 18px;
-            font-style: italic;
-        }
+    /* =========================
+       HEADER
+    ========================= */
 
-        /* MENU */
-        nav {
-            background-color: #6d4c41;
-            text-align: center;
-            padding: 15px;
-        }
+    header {
+      background:
+        linear-gradient(rgba(60, 35, 18, 0.92),
+                        rgba(60, 35, 18, 0.92));
+      color: #f5e5c4;
+      text-align: center;
+      padding: 65px 20px;
+      border-bottom: 7px solid #a47745;
+    }
 
-        nav a {
-            color: #f5e6c8;
-            text-decoration: none;
-            margin: 0 15px;
-            font-weight: bold;
-        }
+    .logo {
+      font-size: 18px;
+      letter-spacing: 5px;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+      color: #d9b982;
+    }
 
-        nav a:hover {
-            color: #d7b899;
-        }
+    header h1 {
+      font-size: clamp(42px, 10vw, 78px);
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      margin-bottom: 10px;
+      text-shadow: 3px 3px #21140d;
+    }
 
-        /* PRODUK */
-        .judul {
-            text-align: center;
-            margin-top: 40px;
-        }
+    header p {
+      font-size: 19px;
+      font-style: italic;
+      color: #ead2a5;
+    }
 
-        .judul h2 {
-            font-size: 30px;
-            text-decoration: underline;
-        }
+    /* =========================
+       NAVBAR
+    ========================= */
 
-        .produk-container {
-            display: flex;
-            justify-content: center;
-            gap: 25px;
-            flex-wrap: wrap;
-            padding: 30px;
-        }
+    nav {
+      background: #4a2d1b;
+      text-align: center;
+      padding: 14px 10px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.25);
+    }
 
-        .produk {
-            background-color: #f5e6c8;
-            width: 280px;
-            padding: 25px;
-            text-align: center;
-            border: 3px solid #8d6e63;
-            border-radius: 5px;
-            box-shadow: 6px 6px 0px #8d6e63;
-        }
+    nav a {
+      color: #f4dfb8;
+      text-decoration: none;
+      margin: 0 14px;
+      font-weight: bold;
+      font-size: 15px;
+      text-transform: uppercase;
+    }
 
-        .produk .icon {
-            font-size: 55px;
-        }
+    nav a:hover {
+      color: #d6a85f;
+    }
 
-        .produk h3 {
-            font-size: 24px;
-            margin: 15px 0;
-        }
+    /* =========================
+       CONTAINER
+    ========================= */
 
-        .harga {
-            font-size: 22px;
-            font-weight: bold;
-            color: #7b3f00;
-        }
+    .container {
+      width: min(1100px, 92%);
+      margin: auto;
+    }
 
-        .beli {
-            display: inline-block;
-            margin-top: 15px;
-            padding: 12px 25px;
-            background-color: #5d4037;
-            color: white;
-            text-decoration: none;
-            border-radius: 4px;
-        }
+    .section-title {
+      text-align: center;
+      margin: 55px 0 30px;
+    }
 
-        .beli:hover {
-            background-color: #3e2723;
-        }
+    .section-title h2 {
+      font-size: 38px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
 
-        /* KONTAK */
-        .kontak {
-            text-align: center;
-            background-color: #c2a383;
-            padding: 35px 20px;
-            margin-top: 30px;
-        }
+    .section-title p {
+      font-style: italic;
+      margin-top: 7px;
+      color: #705039;
+    }
 
-        .kontak h2 {
-            font-size: 28px;
-        }
+    .ornament {
+      font-size: 28px;
+      margin: 10px 0;
+      color: #8a5a30;
+    }
 
-        .telepon {
-            font-size: 22px;
-            font-weight: bold;
-        }
+    /* =========================
+       PRODUK
+    ========================= */
 
-        /* FOOTER */
-        footer {
-            background-color: #3e2723;
-            color: #f5e6c8;
-            text-align: center;
-            padding: 20px;
-        }
+    .products {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+      margin-bottom: 60px;
+    }
 
-        /* HP */
-        @media (max-width: 600px) {
-            header h1 {
-                font-size: 32px;
-            }
+    .product {
+      background: #f5e5c4;
+      border: 4px solid #6d4528;
+      padding: 12px;
+      box-shadow:
+        7px 7px 0 #9a7044,
+        0 10px 25px rgba(50,30,15,0.2);
+      transition: transform 0.25s ease;
+    }
 
-            .produk {
-                width: 90%;
-            }
-        }
-    </style>
+    .product:hover {
+      transform: translateY(-7px);
+    }
+
+    .product-image {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      display: block;
+      border: 2px solid #6d4528;
+      background: #c7a879;
+    }
+
+    .product-content {
+      padding: 20px 10px 12px;
+      text-align: center;
+    }
+
+    .product h3 {
+      font-size: 27px;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .product p {
+      color: #674832;
+      margin-bottom: 15px;
+    }
+
+    .price {
+      display: inline-block;
+      background: #4a2d1b;
+      color: #f5e5c4;
+      padding: 8px 18px;
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 17px;
+      border: 2px solid #b28a55;
+    }
+
+    .button {
+      display: block;
+      background: #79502e;
+      color: white;
+      text-decoration: none;
+      padding: 12px;
+      font-weight: bold;
+      text-transform: uppercase;
+      border: 2px solid #4a2d1b;
+      transition: 0.2s;
+    }
+
+    .button:hover {
+      background: #4a2d1b;
+    }
+
+    /* =========================
+       TENTANG
+    ========================= */
+
+    .about {
+      background: #4a2d1b;
+      color: #f4dfb8;
+      padding: 50px 25px;
+      text-align: center;
+      margin-top: 50px;
+    }
+
+    .about h2 {
+      font-size: 35px;
+      margin-bottom: 15px;
+      text-transform: uppercase;
+    }
+
+    .about p {
+      max-width: 750px;
+      margin: auto;
+      font-size: 17px;
+    }
+
+    /* =========================
+       KONTAK
+    ========================= */
+
+    .contact {
+      text-align: center;
+      padding: 55px 20px;
+    }
+
+    .contact h2 {
+      font-size: 35px;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .phone {
+      display: inline-block;
+      margin: 20px 0;
+      font-size: 27px;
+      font-weight: bold;
+      color: #4a2d1b;
+    }
+
+    .whatsapp {
+      display: inline-block;
+      background: #4a2d1b;
+      color: #f5e5c4;
+      padding: 15px 30px;
+      text-decoration: none;
+      font-weight: bold;
+      text-transform: uppercase;
+      border: 3px solid #8a5a30;
+      transition: 0.2s;
+    }
+
+    .whatsapp:hover {
+      background: #79502e;
+      transform: scale(1.03);
+    }
+
+    /* =========================
+       FOOTER
+    ========================= */
+
+    footer {
+      background: #2c1a10;
+      color: #d9bd8b;
+      text-align: center;
+      padding: 30px 15px;
+      border-top: 5px solid #8a5a30;
+    }
+
+    footer strong {
+      color: #f2d7a5;
+    }
+
+    .footer-small {
+      font-size: 13px;
+      margin-top: 8px;
+      opacity: 0.8;
+    }
+
+    /* =========================
+       RESPONSIVE HP
+    ========================= */
+
+    @media (max-width: 800px) {
+      .products {
+        grid-template-columns: 1fr;
+      }
+
+      .product-image {
+        height: 280px;
+      }
+
+      nav a {
+        margin: 0 6px;
+        font-size: 12px;
+      }
+
+      header {
+        padding: 50px 15px;
+      }
+    }
+
+    @media (max-width: 400px) {
+      nav a {
+        font-size: 10px;
+        margin: 0 4px;
+      }
+
+      .section-title h2,
+      .about h2,
+      .contact h2 {
+        font-size: 28px;
+      }
+
+      .phone {
+        font-size: 21px;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-    <header>
-        <h1>☕ TOKO VINTAGE KEN</h1>
-        <p>Rasa Klasik, Kualitas Terbaik</p>
-    </header>
+  <!-- =========================
+       HEADER
+  ========================= -->
 
-    <nav>
-        <a href="#produk">Produk</a>
-        <a href="#kontak">Kontak</a>
-    </nav>
+  <header id="home">
+    <div class="logo">✦ Produk Pilihan ✦</div>
+
+    <h1>Ken-Coffe</h1>
+
+    <p>
+      Rasa • Alam • Tradisi
+    </p>
+  </header>
+
+
+  <!-- =========================
+       NAVBAR
+  ========================= -->
+
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#produk">Produk</a>
+    <a href="#tentang">Tentang</a>
+    <a href="#kontak">Kontak</a>
+  </nav>
+
+
+  <!-- =========================
+       PRODUK
+  ========================= -->
+
+  <main class="container">
 
     <section id="produk">
 
-        <div class="judul">
-            <h2>Daftar Produk</h2>
-            <p>Pilihan produk terbaik untuk Anda</p>
-        </div>
+      <div class="section-title">
+        <div class="ornament">❦</div>
 
-        <div class="produk-container">
+        <h2>Produk Kami</h2>
 
-            <!-- KOPI -->
-            <div class="produk">
-                <div class="icon">☕</div>
-                <h3>Kopi Robusta</h3>
-                <p>Kopi robusta dengan cita rasa klasik dan aroma yang nikmat.</p>
-                <p class="harga">Rp40.000</p>
-                <a class="beli" href="tel:085850534399">
-                    Beli Sekarang
-                </a>
+        <p>
+          Pilihan terbaik dengan nuansa klasik
+        </p>
+
+        <div class="ornament">❧</div>
+      </div>
+
+
+      <div class="products">
+
+        <!-- KOPI -->
+
+        <article class="product">
+
+          <img
+            src="kopi.jpg"
+            alt="Kopi Robusta"
+            class="product-image"
+          >
+
+          <div class="product-content">
+
+            <h3>☕ Kopi Robusta</h3>
+
+            <p>
+              Kopi robusta pilihan dengan aroma kuat
+              dan cita rasa khas.
+            </p>
+
+            <div class="price">
+              Rp40.000
             </div>
 
-            <!-- KELOMANG -->
-            <div class="produk">
-                <div class="icon">🦀</div>
-                <h3>Kelomang</h3>
-                <p>Kelomang pilihan untuk menemani koleksi hewan peliharaan Anda.</p>
-                <p class="harga">Rp80.000</p>
-                <a class="beli" href="tel:085850534399">
-                    Beli Sekarang
-                </a>
+            <a
+              class="button"
+              href="https://wa.me/6285850534399?text=Halo%20Ken-Coffe,%20saya%20ingin%20memesan%20Kopi%20Robusta"
+              target="_blank"
+            >
+              Pesan Sekarang
+            </a>
+
+          </div>
+        </article>
+
+
+        <!-- KELOMANG -->
+
+        <article class="product">
+
+          <img
+            src="kelomang.jpg"
+            alt="Kelomang"
+            class="product-image"
+          >
+
+          <div class="product-content">
+
+            <h3>🐚 Kelomang</h3>
+
+            <p>
+              Kelomang dengan cangkang unik,
+              cocok untuk koleksi dan hobi.
+            </p>
+
+            <div class="price">
+              Rp80.000
             </div>
 
-            <!-- BOTI -->
-            <div class="produk">
-                <div class="icon">🥖</div>
-                <h3>Boti</h3>
-                <p>Produk berkualitas dengan harga yang bersahabat.</p>
-                <p class="harga">Rp100.000</p>
-                <a class="beli" href="tel:085850534399">
-                    Beli Sekarang
-                </a>
+            <a
+              class="button"
+              href="https://wa.me/6285850534399?text=Halo%20Ken-Coffe,%20saya%20ingin%20memesan%20Kelomang"
+              target="_blank"
+            >
+              Pesan Sekarang
+            </a>
+
+          </div>
+        </article>
+
+
+        <!-- BOTI -->
+
+        <article class="product">
+
+          <img
+            src="boti.jpg"
+            alt="Boti"
+            class="product-image"
+          >
+
+          <div class="product-content">
+
+            <h3>🐟 Boti</h3>
+
+            <p>
+              Produk boti pilihan dengan kualitas
+              terbaik untuk kebutuhan Anda.
+            </p>
+
+            <div class="price">
+              Rp100.000
             </div>
 
-        </div>
+            <a
+              class="button"
+              href="https://wa.me/6285850534399?text=Halo%20Ken-Coffe,%20saya%20ingin%20memesan%20Boti"
+              target="_blank"
+            >
+              Pesan Sekarang
+            </a>
+
+          </div>
+        </article>
+
+      </div>
 
     </section>
 
-    <!-- KONTAK -->
-    <section class="kontak" id="kontak">
-        <h2>📞 Hubungi Kami</h2>
-        <p>Untuk pemesanan dan informasi lebih lanjut:</p>
+  </main>
 
-        <p class="telepon">
-            ☎ 0858-5053-4399
-        </p>
-    </section>
 
-    <!-- FOOTER -->
-    <footer>
-        <p>
-            © 2026 Toko Vintage Kenzy putra widodo XRPL-1 (14).
-        </p>
-        <p>
-            Dibuat dengan ❤️ untuk pecinta produk klasik.
-        </p>
-    </footer>
+  <!-- =========================
+       TENTANG
+  ========================= -->
+
+  <section class="about" id="tentang">
+
+    <div class="container">
+
+      <h2>Tentang Ken-Coffe</h2>
+
+      <p>
+        Selamat datang di Ken-Coffe.
+        Kami menghadirkan berbagai produk pilihan
+        dengan kualitas terbaik dan pelayanan yang ramah.
+        Nikmati pengalaman berbelanja dengan suasana
+        klasik dan vintage.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       KONTAK
+  ========================= -->
+
+  <section class="contact" id="kontak">
+
+    <h2>Hubungi Kami</h2>
+
+    <p>
+      Tertarik dengan produk kami?
+      Silakan hubungi kami melalui WhatsApp.
+    </p>
+
+    <!-- GANTI NOMOR INI -->
+
+    <a
+      class="phone"
+      href="tel:+6285850534399"
+    >
+      ☎ +62 812-3456-7890
+    </a>
+
+    <br>
+
+    <a
+      class="whatsapp"
+      href="https://wa.me/6285850534399"
+      target="_blank"
+    >
+      💬 Chat WhatsApp
+    </a>
+
+  </section>
+
+
+  <!-- =========================
+       FOOTER
+  ========================= -->
+
+  <footer>
+
+    <div>
+      <strong>Ken-Coffe</strong>
+    </div>
+
+    <div class="footer-small">
+      © 2026 Ken-Coffe. All Rights Reserved.
+    </div>
+
+    <div class="footer-small">
+      Dibuat untuk GitHub Pages
+    </div>
+
+  </footer>
 
 </body>
-</html>
+</html>               
