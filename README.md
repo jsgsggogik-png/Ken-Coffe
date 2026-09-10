@@ -179,7 +179,7 @@
                 <h3>Kopi Robusta</h3>
                 <p>Kopi robusta dengan cita rasa klasik dan aroma yang nikmat.</p>
                 <p class="harga">Rp40.000</p>
-                <a class="beli" href="tel:081234567890">
+                <a class="beli" href="tel:085850534399">
                     Beli Sekarang
                 </a>
             </div>
@@ -190,7 +190,7 @@
                 <h3>Kelomang</h3>
                 <p>Kelomang pilihan untuk menemani koleksi hewan peliharaan Anda.</p>
                 <p class="harga">Rp80.000</p>
-                <a class="beli" href="tel:081234567890">
+                <a class="beli" href="tel:085850534399">
                     Beli Sekarang
                 </a>
             </div>
@@ -201,7 +201,7 @@
                 <h3>Boti</h3>
                 <p>Produk berkualitas dengan harga yang bersahabat.</p>
                 <p class="harga">Rp100.000</p>
-                <a class="beli" href="tel:081234567890">
+                <a class="beli" href="tel:085850534399">
                     Beli Sekarang
                 </a>
             </div>
